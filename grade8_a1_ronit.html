@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -8,15 +8,13 @@
     :root {
       --bg: #001a33;
       --text: #ffffff;
-      --accent: #ff4dff; /* שכבת ח */
+      --accent: #ff4dff;
       --panelBg: rgba(255,255,255,0.07);
       --panelBorder: rgba(255,255,255,0.15);
       --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Hebrew", sans-serif;
-      --danger: #ff4d4d; /* תלמיד סמל */
+      --danger: #ff4d4d;
     }
-
     * { box-sizing: border-box; margin: 0; }
-
     body {
       background-color: var(--bg);
       color: var(--text);
@@ -29,7 +27,6 @@
       text-align: center;
       line-height: 1.4;
     }
-
     .page-title {
       color: var(--accent);
       font-size: clamp(1.2rem,2vw+1rem,1.6rem);
@@ -38,14 +35,12 @@
       margin-bottom: 0.5rem;
       white-space: pre-line;
     }
-
     .teacher-line {
       font-size: 0.9rem;
       color: var(--text);
       opacity: 0.85;
       margin-bottom: 1rem;
     }
-
     .panel {
       width: 100%;
       max-width: 700px;
@@ -60,7 +55,6 @@
       direction: rtl;
       overflow-x: auto;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
@@ -68,7 +62,6 @@
       font-size: 0.85rem;
       color: var(--text);
     }
-
     thead th {
       text-align: right;
       padding: 0.5rem;
@@ -78,7 +71,6 @@
       color: var(--accent);
       white-space: nowrap;
     }
-
     tbody td {
       padding: 0.5rem;
       border-bottom: 1px solid rgba(255,255,255,0.08);
@@ -86,12 +78,8 @@
       line-height: 1.4;
       word-break: break-word;
     }
-
-    .semel {
-      color: var(--danger);
-      font-weight: 600;
-    }
-
+    .semel { color: var(--danger); font-weight: 600; }
+    .lowGrade { color: var(--danger); font-weight: 600; }
     .summary-line {
       text-align: left;
       direction: rtl;
@@ -100,12 +88,7 @@
       opacity: 0.9;
       margin-top: 0.75rem;
     }
-
-    .back-area {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
+    .back-area { margin-top: 2rem; text-align: center; }
     .back-link {
       display: inline-block;
       font-size: 0.9rem;
@@ -146,109 +129,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td>הראל</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>66</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>אורין</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>70</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>אורי</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>50</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>נועם</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>32</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>אדל</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>60</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>אדום</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>55</td>
-          <td>בדיקת שם</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>שני</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>43</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>דוד</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>45</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>איסק</td>
-          <td></td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>72</td>
-          <td>בדיקת שם</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="semel">אורי</td>
-          <td class="semel">בן כליפה</td>
-          <td>ח</td>
-          <td>א1</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td>60</td>
-          <td><span class="semel">תלמיד סמל</span></td>
-        </tr>
+        <tr><td></td><td>הראל</td><td>משה</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>66</td><td></td></tr>
+        <tr><td></td><td>אורין</td><td>נחמיה</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>70</td><td></td></tr>
+        <tr><td></td><td>אורי</td><td>?</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>50</td><td></td></tr>
+        <tr><td></td><td>נועם</td><td>כהן</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>32</td><td></td></tr>
+        <tr><td></td><td>אדל</td><td>אמין זדה</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>60</td><td></td></tr>
+        <tr><td></td><td>אלנה</td><td>אדום</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>55</td><td></td></tr>
+        <tr><td></td><td>שני</td><td>ליס</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>43</td><td></td></tr>
+        <tr><td></td><td>דוד</td><td>קוסשוילי</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>45</td><td></td></tr>
+        <tr><td></td><td>איסק</td><td>איזוגרפוב</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>72</td><td></td></tr>
+        <tr><td></td><td>אורי</td><td>בן כליפה</td><td>ח</td><td>א1</td><td>מבחן מיפוי ספטמבר</td><td>60</td><td></td></tr>
       </tbody>
     </table>
-
     <div class="summary-line">
       מספר תלמידים בהקבצה: <span id="studentCount">0</span>
     </div>
@@ -260,17 +152,55 @@
 
   <script>
     (function() {
-      const tbody = document.querySelector('#studentsTable tbody');
-      const rows  = Array.from(tbody.querySelectorAll('tr'));
-      let counter = 1;
-      rows.forEach((tr) => {
-        const firstCell = tr.querySelector('td');
-        if (firstCell) {
-          firstCell.textContent = counter;
-          counter++;
+      const semelList = [
+        ["אדל","אמין זדה"], ["ליאן","חפצדי"], ["מאור","עבו"], ["אלדר","יובו"],
+        ["וז'ה","קרטבלישווילי"], ["יהלי","כהן"], ["היליי","בטלר"], ["עידו","דרעי"],
+        ["דניאל","שמעיה"], ["עדיאל","חמו"], ["יובל","כהנא"], ["אילאי","שרביט"],
+        ["ג'וזפין","הילמן רייך"], ["אורי","בן כליפה"], ["נועם","כהן"], ["לישי","ווסה"],
+        ["יונתן","ליברמן"], ["רן","מבורך"], ["שירה","צדוק"], ["סוניה","קנייבסקי"],
+        ["ליאן","אזולאי"], ["אריאל","ששון"], ["מעין","סמרה"], ["דניס",""],
+        ["מקסים","קליגין"], ["יאיר","בן סעדון"], ["חיים","גדמו"], ["אוריאל","דניאלי"],
+        ["אילאי","נאור פרטוק"], ["אדליה","כצמן"], ["גל","מבורך"], ["אליאן","כהן"],
+        ["ליאן","בן חמו"], ["איתי","ניגרקר"], ["אימבר","שמחון"], ["מיכאל","שימנסקי"],
+        ["איתי","שפעים"], ["ליאן","ארוך"]
+      ];
+      function isSemel(first,last){
+        first=(first||"").trim(); last=(last||"").trim();
+        return semelList.some(([f,l])=>f===first&&(l===last||l===""||last===""));
+      }
+      const tbody=document.querySelector('#studentsTable tbody');
+      const rows=Array.from(tbody.querySelectorAll('tr'));
+      let counter=1;
+      rows.forEach(tr=>{
+        const cells=tr.querySelectorAll('td');
+        if(cells.length<8)return;
+        cells[0].textContent=counter; counter++;
+        const firstNameCell=cells[1];
+        const lastNameCell=cells[2];
+        const gradeCell=cells[6];
+        const notesCell=cells[7];
+        let gradeText=(gradeCell.textContent||"").trim();
+        if(gradeText===""){
+          gradeCell.innerHTML='<span class="lowGrade">חסר ציון</span>';
+        }else{
+          const num=Number(gradeText);
+          if(!isNaN(num)&&num<60){
+            gradeCell.innerHTML='<span class="lowGrade">'+gradeText+'</span>';
+          }
+        }
+        const fName=firstNameCell.textContent.trim();
+        const lName=lastNameCell.textContent.trim();
+        if(isSemel(fName,lName)){
+          firstNameCell.classList.add("semel");
+          lastNameCell.classList.add("semel");
+          if(!notesCell.textContent.includes("תלמיד סמל")){
+            notesCell.innerHTML='<span class="semel">תלמיד סמל</span>';
+          }else{
+            notesCell.classList.add("semel");
+          }
         }
       });
-      document.getElementById('studentCount').textContent = rows.length;
+      document.getElementById('studentCount').textContent=rows.length;
     })();
   </script>
 </body>

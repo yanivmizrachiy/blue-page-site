@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
@@ -6,124 +6,59 @@
   <title>שכבת ט1 - הקבצה מדעית - מערכת חכמה לניהול ציונים</title>
   <style>
     :root {
-      --bg: #001a33;
-      --text: #ffffff;
-      --accent: #00c6ff; /* ט */
-      --panelBg: rgba(255,255,255,0.07);
-      --panelBorder: rgba(255,255,255,0.15);
-      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Hebrew", sans-serif;
-      --danger: #ff4d4d; /* תלמיד סמל */
+      --bg:#001a33; --text:#ffffff; --accent:#00c6ff;
+      --panelBg:rgba(255,255,255,0.07);
+      --panelBorder:rgba(255,255,255,0.15);
+      --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;
+      --danger:#ff4d4d;
     }
-
-    * { box-sizing: border-box; margin: 0; }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem 4rem;
-      text-align: center;
-      line-height: 1.4;
+    *{box-sizing:border-box;margin:0;}
+    body{
+      background-color:var(--bg); color:var(--text); font-family:var(--font);
+      min-height:100vh; display:flex; flex-direction:column; align-items:center;
+      padding:2rem 1rem 4rem; text-align:center; line-height:1.4;
     }
-
-    .page-title {
-      color: var(--accent);
-      font-size: clamp(1.2rem,2vw+1rem,1.6rem);
-      font-weight: 700;
-      text-shadow: 0 0 16px rgba(0,198,255,0.45);
-      margin-bottom: 0.5rem;
-      white-space: pre-line;
+    .page-title{
+      color:var(--accent); font-size:clamp(1.2rem,2vw+1rem,1.6rem); font-weight:700;
+      text-shadow:0 0 16px rgba(0,198,255,0.45); margin-bottom:0.5rem; white-space:pre-line;
     }
-
-    .teacher-line {
-      font-size: 0.9rem;
-      color: var(--text);
-      opacity: 0.85;
-      margin-bottom: 1rem;
+    .teacher-line{
+      font-size:0.9rem; color:var(--text); opacity:0.85; margin-bottom:1rem;
     }
-
-    .panel {
-      width: 100%;
-      max-width: 700px;
-      background: var(--panelBg);
-      border: 1px solid var(--panelBorder);
-      border-radius: 1rem;
-      padding: 1rem 1rem 1.5rem;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      text-align: right;
-      direction: rtl;
-      overflow-x: auto;
+    .panel{
+      width:100%; max-width:700px; background:var(--panelBg); border:1px solid var(--panelBorder);
+      border-radius:1rem; padding:1rem 1rem 1.5rem; box-shadow:0 20px 60px rgba(0,0,0,0.6);
+      backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); text-align:right;
+      direction:rtl; overflow-x:auto;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 800px;
-      font-size: 0.85rem;
-      color: var(--text);
+    table{
+      width:100%; border-collapse:collapse; min-width:800px; font-size:0.85rem; color:var(--text);
     }
-
-    thead th {
-      text-align: right;
-      padding: 0.5rem;
-      background: rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      font-weight: 600;
-      color: var(--accent);
-      white-space: nowrap;
+    thead th{
+      text-align:right; padding:0.5rem; background:rgba(255,255,255,0.08);
+      border-bottom:1px solid rgba(255,255,255,0.2); font-weight:600; color:var(--accent);
+      white-space:nowrap;
     }
-
-    tbody td {
-      padding: 0.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      vertical-align: top;
-      line-height: 1.4;
-      word-break: break-word;
+    tbody td{
+      padding:0.5rem; border-bottom:1px solid rgba(255,255,255,0.08);
+      vertical-align:top; line-height:1.4; word-break:break-word;
     }
-
-    .semel {
-      color: var(--danger);
-      font-weight: 600;
+    .semel{color:var(--danger);font-weight:600;}
+    .lowGrade{color:var(--danger);font-weight:600;}
+    .summary-line{
+      text-align:left; direction:rtl; font-size:0.8rem; color:var(--text);
+      opacity:0.9; margin-top:0.75rem;
     }
-
-    .summary-line {
-      text-align: left;
-      direction: rtl;
-      font-size: 0.8rem;
-      color: var(--text);
-      opacity: 0.9;
-      margin-top: 0.75rem;
+    .back-area{margin-top:2rem;text-align:center;}
+    .back-link{
+      display:inline-block; font-size:0.9rem; font-weight:600; color:#4da6ff;
+      text-decoration:none; border:1px solid #4da6ff; border-radius:0.6rem;
+      padding:0.5rem 0.9rem; box-shadow:0 15px 30px rgba(0,0,0,0.7);
+      background:rgba(0,0,0,0.2); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
+      transition:all 0.15s ease-in-out;
     }
-
-    .back-area {
-      margin-top: 2rem;
-      text-align: center;
-    }
-
-    .back-link {
-      display: inline-block;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #4da6ff;
-      text-decoration: none;
-      border: 1px solid #4da6ff;
-      border-radius: 0.6rem;
-      padding: 0.5rem 0.9rem;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
-      background: rgba(0,0,0,0.2);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      transition: all 0.15s ease-in-out;
-    }
-    .back-link:hover {
-      background: rgba(255,255,255,0.06);
-      transform: translateY(-2px) scale(1.03);
+    .back-link:hover{
+      background:rgba(255,255,255,0.06); transform:translateY(-2px) scale(1.03);
     }
   </style>
 </head>
@@ -146,42 +81,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td>אדווה</td>
-          <td>חיימי</td>
-          <td>ט1</td>
-          <td>מדעית</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>מיכל</td>
-          <td>רחמים</td>
-          <td>ט1</td>
-          <td>מדעית</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="semel">דניס</td>
-          <td class="semel"></td>
-          <td>ט4</td>
-          <td>מדעית</td>
-          <td>מבחן מיפוי ספטמבר</td>
-          <td></td>
-          <td><span class="semel">תלמיד סמל</span></td>
-        </tr>
+        <tr><td></td><td>אדווה</td><td>חיימי</td><td>ט1</td><td>מדעית</td><td>מבחן מיפוי ספטמבר</td><td></td><td></td></tr>
+        <tr><td></td><td>מיכל</td><td>רחמים</td><td>ט1</td><td>מדעית</td><td>מבחן מיפוי ספטמבר</td><td></td><td></td></tr>
+        <tr><td></td><td>דניס</td><td></td><td>ט4</td><td>מדעית</td><td>מבחן מיפוי ספטמבר</td><td></td><td></td></tr>
       </tbody>
     </table>
-
-    <div class="summary-line">
-      מספר תלמידים בהקבצה: <span id="studentCount">0</span>
-    </div>
+    <div class="summary-line">מספר תלמידים בהקבצה: <span id="studentCount">0</span></div>
   </section>
 
   <div class="back-area">
@@ -189,18 +94,55 @@
   </div>
 
   <script>
-    (function() {
-      const tbody = document.querySelector('#studentsTable tbody');
-      const rows  = Array.from(tbody.querySelectorAll('tr'));
-      let counter = 1;
-      rows.forEach((tr) => {
-        const firstCell = tr.querySelector('td');
-        if (firstCell) {
-          firstCell.textContent = counter;
-          counter++;
+    (function(){
+      const semelList=[
+        ["אדל","אמין זדה"],["ליאן","חפצדי"],["מאור","עבו"],["אלדר","יובו"],
+        ["וז'ה","קרטבלישווילי"],["יהלי","כהן"],["היליי","בטלר"],["עידו","דרעי"],
+        ["דניאל","שמעיה"],["עדיאל","חמו"],["יובל","כהנא"],["אילאי","שרביט"],
+        ["ג'וזפין","הילמן רייך"],["אורי","בן כליפה"],["נועם","כהן"],["לישי","ווסה"],
+        ["יונתן","ליברמן"],["רן","מבורך"],["שירה","צדוק"],["סוניה","קנייבסקי"],
+        ["ליאן","אזולאי"],["אריאל","ששון"],["מעין","סמרה"],["דניס",""],
+        ["מקסים","קליגין"],["יאיר","בן סעדון"],["חיים","גדמו"],["אוריאל","דניאלי"],
+        ["אילאי","נאור פרטוק"],["אדליה","כצמן"],["גל","מבורך"],["אליאן","כהן"],
+        ["ליאן","בן חמו"],["איתי","ניגרקר"],["אימבר","שמחון"],["מיכאל","שימנסקי"],
+        ["איתי","שפעים"],["ליאן","ארוך"]
+      ];
+      function isSemel(first,last){
+        first=(first||"").trim(); last=(last||"").trim();
+        return semelList.some(([f,l])=>f===first&&(l===last||l===""||last===""));
+      }
+      const tbody=document.querySelector('#studentsTable tbody');
+      const rows=Array.from(tbody.querySelectorAll('tr'));
+      let counter=1;
+      rows.forEach(tr=>{
+        const cells=tr.querySelectorAll('td'); if(cells.length<8)return;
+        cells[0].textContent=counter; counter++;
+        const firstNameCell=cells[1];
+        const lastNameCell=cells[2];
+        const gradeCell=cells[6];
+        const notesCell=cells[7];
+        let gradeText=(gradeCell.textContent||"").trim();
+        if(gradeText===""){
+          gradeCell.innerHTML='<span class="lowGrade">חסר ציון</span>';
+        }else{
+          const num=Number(gradeText);
+          if(!isNaN(num)&&num<60){
+            gradeCell.innerHTML='<span class="lowGrade">'+gradeText+'</span>';
+          }
+        }
+        const fName=firstNameCell.textContent.trim();
+        const lName=lastNameCell.textContent.trim();
+        if(isSemel(fName,lName)){
+          firstNameCell.classList.add("semel");
+          lastNameCell.classList.add("semel");
+          if(!notesCell.textContent.includes("תלמיד סמל")){
+            notesCell.innerHTML='<span class="semel">תלמיד סמל</span>';
+          }else{
+            notesCell.classList.add("semel");
+          }
         }
       });
-      document.getElementById('studentCount').textContent = rows.length;
+      document.getElementById('studentCount').textContent=rows.length;
     })();
   </script>
 </body>
