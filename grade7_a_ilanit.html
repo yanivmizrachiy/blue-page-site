@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>שכבת ז - הקבצה א - מערכת חכמה לניהול ציונים</title>
+  <style>
+    :root {
+      --bg:#001a33;
+      --text:#ffffff;
+      --accent:#8e5bff;
+      --panelBg:rgba(255,255,255,0.07);
+      --panelBorder:rgba(255,255,255,0.15);
+      --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;
+      --danger:#ff4d4d;
+    }
+    *{box-sizing:border-box;margin:0;}
+    body{
+      background-color:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:2rem 1rem 4rem;
+      text-align:center;
+      line-height:1.4;
+    }
+    .page-title{
+      color:var(--accent);
+      font-size:clamp(1.2rem,2vw+1rem,1.6rem);
+      font-weight:700;
+      text-shadow:0 0 16px rgba(142,91,255,0.45);
+      margin-bottom:0.5rem;
+      white-space:pre-line;
+    }
+    .teacher-line{
+      font-size:0.9rem;
+      color:var(--text);
+      opacity:0.85;
+      margin-bottom:1rem;
+    }
+    .panel{
+      width:100%;
+      max-width:700px;
+      background:var(--panelBg);
+      border:1px solid var(--panelBorder);
+      border-radius:1rem;
+      padding:1rem 1rem 1.5rem;
+      box-shadow:0 20px 60px rgba(0,0,0,0.6);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      text-align:right;
+      direction:rtl;
+      overflow-x:auto;
+    }
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:800px;
+      font-size:0.85rem;
+      color:var(--text);
+    }
+    thead th{
+      text-align:right;
+      padding:0.5rem;
+      background:rgba(255,255,255,0.08);
+      border-bottom:1px solid rgba(255,255,255,0.2);
+      font-weight:600;
+      color:var(--accent);
+      white-space:nowrap;
+    }
+    tbody td{
+      padding:0.5rem;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      vertical-align:top;
+      line-height:1.4;
+      word-break:break-word;
+    }
+    .semel{
+      color:var(--danger);
+      font-weight:600;
+    }
+    .lowgrade{
+      color:var(--danger);
+      font-weight:600;
+    }
+    .summary-line{
+      text-align:left;
+      direction:rtl;
+      font-size:0.8rem;
+      color:var(--text);
+      opacity:0.9;
+      margin-top:0.75rem;
+    }
+    .back-area{
+      margin-top:2rem;
+      text-align:center;
+    }
+    .back-link{
+      display:inline-block;
+      font-size:0.9rem;
+      font-weight:600;
+      color:#4da6ff;
+      text-decoration:none;
+      border:1px solid #4da6ff;
+      border-radius:0.6rem;
+      padding:0.5rem 0.9rem;
+      box-shadow:0 15px 30px rgba(0,0,0,0.7);
+      background:rgba(0,0,0,0.2);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      transition:all 0.15s ease-in-out;
+    }
+    .back-link:hover{
+      background:rgba(255,255,255,0.06);
+      transform:translateY(-2px) scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-title">שכבת ז - הקבצה א</div>
+  <div class="teacher-line">שם המורה: אילנית רז</div>
+
+  <section class="panel">
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>שם פרטי</th>
+          <th>שם משפחה</th>
+          <th>כיתה</th>
+          <th>הקבצה</th>
+          <th>אירוע</th>
+          <th>ציון</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td></td><td>אופק אופיר</td><td>חיים</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>אלישקובי</td><td>גבריאל</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>אמויאל</td><td>עידן ישראל</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>אסיאג</td><td>נווה</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>באנון</td><td>עדי</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td class="semel">בן כליפה</td><td class="semel">אריאל</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td class="lowgrade">חסר ציון</td><td class="semel">תלמיד סמל</td></tr>
+        <tr><td></td><td>בנישו</td><td>אלין</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>גבאי</td><td>אושרי</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>גיא</td><td>ירין</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>גידניאן</td><td>אלרואי משה</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>דנון</td><td>עדי</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>חקימוב</td><td>ארטיום</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>ירמיהו</td><td>נתנאל</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>כהן</td><td>אגם</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>כהן</td><td>גיא</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>כהן</td><td>נחמו דניאל</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>מזרחי</td><td>סתיו</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>סולטן</td><td>דוד</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>סנבטו</td><td>טאמנסאו</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>קוסשוילי</td><td>רבקה</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>רחמים</td><td>אייל</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+        <tr><td></td><td>ששון</td><td>נהוראי שלמה</td><td>ז</td><td>א</td><td>בוחן תחילת שנה</td><td>חסר ציון</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="summary-line">
+      מספר תלמידים בהקבצה: <span id="studentCount">0</span>
+    </div>
+  </section>
+
+  <div class="back-area">
+    <a class="back-link" href="grade7.html">חזרה לשכבת ז</a>
+  </div>
+
+  <script>
+    (function(){
+      const tbody = document.querySelector('#studentsTable tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      let counter = 1;
+      rows.forEach(tr=>{
+        const firstCell = tr.querySelector('td');
+        if(firstCell){
+          firstCell.textContent = counter;
+          counter++;
+        }
+        const gradeCell = tr.children[6];
+        if(gradeCell){
+          const txt = gradeCell.textContent.trim();
+          if(txt === "" || txt === "חסר ציון" || txt === "לא נבחנה"){
+            gradeCell.classList.add("lowgrade");
+          } else {
+            const num = parseInt(txt,10);
+            if(!isNaN(num) && num < 60){
+              gradeCell.classList.add("lowgrade");
+            }
+          }
+        }
+      });
+      document.getElementById('studentCount').textContent = rows.length;
+    })();
+  </script>
+</body>
+</html>

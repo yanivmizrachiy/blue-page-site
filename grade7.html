@@ -1,17 +1,17 @@
-﻿<!DOCTYPE html>
-<html lang=""he"" dir=""rtl"">
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
 <head>
-  <meta charset=""UTF-8"" />
-  <meta name=""viewport"" content=""width=device-width,initial-scale=1.0"" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>שכבת ז - מערכת חכמה לניהול ציונים</title>
   <style>
     :root {
       --bg:#001a33;
       --text:#ffffff;
-      --accent:#8e5bff; /* ז */
+      --accent:#8e5bff;
       --panelBg:rgba(255,255,255,0.07);
       --panelBorder:rgba(255,255,255,0.15);
-      --font:system-ui,-apple-system,BlinkMacSystemFont,""Segoe UI"",Roboto,""Helvetica Neue"",Arial,""Noto Sans Hebrew"",sans-serif;
+      --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;
     }
     *{box-sizing:border-box;margin:0;}
     body{
@@ -39,6 +39,55 @@
       margin-bottom:2rem;
       color:#fff;
     }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:1rem;
+      width:100%;
+      max-width:800px;
+      text-align:right;
+      direction:rtl;
+    }
+    .group-card{
+      background:var(--panelBg);
+      border:1px solid var(--panelBorder);
+      border-radius:1rem;
+      padding:1rem 1rem 1.2rem;
+      box-shadow:0 20px 60px rgba(0,0,0,0.6);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      text-decoration:none;
+      color:#fff;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:all 0.15s ease-in-out;
+      min-height:130px;
+    }
+    .group-card:hover{
+      background:rgba(255,255,255,0.09);
+      transform:translateY(-2px) scale(1.02);
+    }
+    .group-top{
+      font-size:1rem;
+      font-weight:600;
+      color:var(--accent);
+      text-shadow:0 0 12px rgba(142,91,255,0.4);
+      margin-bottom:0.4rem;
+      line-height:1.4;
+    }
+    .teacher-line{
+      font-size:0.8rem;
+      color:#fff;
+      opacity:0.9;
+      line-height:1.4;
+    }
+    .count-line{
+      font-size:0.75rem;
+      color:#fff;
+      opacity:0.9;
+      margin-top:0.5rem;
+    }
     .back-area{
       margin-top:2rem;
       text-align:center;
@@ -62,26 +111,34 @@
       background:rgba(255,255,255,0.06);
       transform:translateY(-2px) scale(1.03);
     }
-    .note{
-      font-size:0.8rem;
-      color:#fff;
-      opacity:0.8;
-      max-width:480px;
-      line-height:1.5;
-    }
   </style>
 </head>
 <body>
-  <div class=""page-title"">שכבת ז</div>
-  <div class=""explain"">ברגע שתספק שיבוץ הקבצות לשכבת ז (מורה + א/א1/מדעית/מקדמת), נציג כאן את כל הקבוצות עם המספרים האמיתיים.</div>
+  <div class="page-title">שכבת ז</div>
+  <div class="explain">בחר הקבצה כדי לראות את כל התלמידים</div>
 
-  <div class=""note"">
-    כרגע אין שיבוץ מלא להקבצות ז (עדכון אחרון).
-    ברגע שייניב ישלח שיבוץ, העמוד הזה יתמלא אוטומטית.
-  </div>
+  <section class="grid">
+    <a class="group-card" href="grade7_a_ilanit.html">
+      <div class="group-top">הקבצה א</div>
+      <div class="teacher-line">המורה: אילנית רז</div>
+      <div class="count-line">תלמידים: 22</div>
+    </a>
 
-  <div class=""back-area"">
-    <a class=""back-link"" href=""index.html"">חזרה לעמוד הראשי</a>
+    <a class="group-card" href="grade7_a1_yaniv.html">
+      <div class="group-top">הקבצה א1</div>
+      <div class="teacher-line">המורה: יניב רז</div>
+      <div class="count-line">תלמידים: 14</div>
+    </a>
+
+    <div class="group-card">
+      <div class="group-top">כיתה מקדמת (ז2)</div>
+      <div class="teacher-line">המורה: (יעודכן)</div>
+      <div class="count-line">תלמידים: 0</div>
+    </div>
+  </section>
+
+  <div class="back-area">
+    <a class="back-link" href="index.html">חזרה לעמוד הראשי</a>
   </div>
 </body>
 </html>
