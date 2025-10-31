@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>שכבת ז - מערכת חכמה לניהול ציונים</title>
+  <style>
+    :root {
+      --bg:#001a33;
+      --text:#ffffff;
+      --accent:#8e5bff; /* ז */
+      --panelBg:rgba(255,255,255,0.07);
+      --panelBorder:rgba(255,255,255,0.15);
+      --font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Hebrew",sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;}
+    body{
+      background-color:var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      padding:2rem 1rem 4rem;
+      text-align:center;
+      line-height:1.4;
+    }
+    .page-title{
+      color:var(--accent);
+      font-size:clamp(1.3rem,2vw+1rem,1.7rem);
+      font-weight:700;
+      text-shadow:0 0 16px rgba(142,91,255,0.45);
+      margin-bottom:0.5rem;
+    }
+    .explain{
+      font-size:0.8rem;
+      opacity:0.85;
+      margin-bottom:2rem;
+      color:#fff;
+    }
+    .back-area{
+      margin-top:2rem;
+      text-align:center;
+    }
+    .back-link{
+      display:inline-block;
+      font-size:0.9rem;
+      font-weight:600;
+      color:#4da6ff;
+      text-decoration:none;
+      border:1px solid #4da6ff;
+      border-radius:0.6rem;
+      padding:0.5rem 0.9rem;
+      box-shadow:0 15px 30px rgba(0,0,0,0.7);
+      background:rgba(0,0,0,0.2);
+      backdrop-filter:blur(4px);
+      -webkit-backdrop-filter:blur(4px);
+      transition:all 0.15s ease-in-out;
+    }
+    .back-link:hover{
+      background:rgba(255,255,255,0.06);
+      transform:translateY(-2px) scale(1.03);
+    }
+    .note{
+      font-size:0.8rem;
+      color:#fff;
+      opacity:0.8;
+      max-width:480px;
+      line-height:1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-title">שכבת ז</div>
+  <div class="explain">ברגע שייניב ישלח שיבוץ (איזה תלמיד באיזו הקבצה + מי המורה), העמוד יתמלא אוטומטית.</div>
+
+  <div class="note">
+    כרגע אין שיבוץ מלא להקבצות ז. ברגע שייניב ייתן שיבוץ, יופיעו כאן כפתורים כמו בשכבת ח וט.
+  </div>
+
+  <div class="back-area">
+    <a class="back-link" href="index.html">חזרה לעמוד הראשי</a>
+  </div>
+</body>
+</html>

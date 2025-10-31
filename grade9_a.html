@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>שכבת ט - הקבצה א - מערכת חכמה לניהול ציונים</title>
+  <style>
+    :root {
+      --bg: #001a33;
+      --text: #ffffff;
+      --accent: #00c6ff; /* שכבת ט */
+      --panelBg: rgba(255,255,255,0.07);
+      --panelBorder: rgba(255,255,255,0.15);
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans Hebrew", sans-serif;
+      --danger: #ff4d4d; /* תלמיד סמל */
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 4rem;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .page-title {
+      color: var(--accent);
+      font-size: clamp(1.2rem,2vw+1rem,1.6rem);
+      font-weight: 700;
+      text-shadow: 0 0 16px rgba(0,198,255,0.45);
+      margin-bottom: 0.5rem;
+      white-space: pre-line;
+    }
+
+    .teacher-line {
+      font-size: 0.9rem;
+      color: var(--text);
+      opacity: 0.85;
+      margin-bottom: 1rem;
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 700px;
+      background: var(--panelBg);
+      border: 1px solid var(--panelBorder);
+      border-radius: 1rem;
+      padding: 1rem 1rem 1.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      text-align: right;
+      direction: rtl;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    thead th {
+      text-align: right;
+      padding: 0.5rem;
+      background: rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.2);
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    tbody td {
+      padding: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      vertical-align: top;
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .semel {
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    .summary-line {
+      text-align: left;
+      direction: rtl;
+      font-size: 0.8rem;
+      color: var(--text);
+      opacity: 0.9;
+      margin-top: 0.75rem;
+    }
+
+    .back-area {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .back-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #4da6ff;
+      text-decoration: none;
+      border: 1px solid #4da6ff;
+      border-radius: 0.6rem;
+      padding: 0.5rem 0.9rem;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+      background: rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      transition: all 0.15s ease-in-out;
+    }
+    .back-link:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px) scale(1.03);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-title">שכבת ט - הקבצה א</div>
+  <div class="teacher-line">שם המורה: סוניה רפאלי</div>
+
+  <section class="panel">
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>שם פרטי</th>
+          <th>שם משפחה</th>
+          <th>כיתה</th>
+          <th>הקבצה</th>
+          <th>אירוע</th>
+          <th>ציון</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td class="semel">יאיר</td>
+          <td class="semel">בן סעדון</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>83</td>
+          <td><span class="semel">תלמיד סמל</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>יואל</td>
+          <td>דגפו</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>83</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>הלי</td>
+          <td>וובה</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>85</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>אורין</td>
+          <td>זדה</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>92</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>סלין מור</td>
+          <td>חנניה</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>88</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>לירז מיכאל</td>
+          <td>יוסף</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>83</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>הדס</td>
+          <td>כהן</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>85</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>יונתן</td>
+          <td>ליסרמן</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>72</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>רומי</td>
+          <td>נג'מיאן</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td></td>
+          <td>לא נבחנה</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>אמילי</td>
+          <td></td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>88</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ליבי</td>
+          <td></td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>75</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ליאור חי</td>
+          <td>דואק</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>91</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>אייל</td>
+          <td>זקן</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>87</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>אורי</td>
+          <td>יעקובי</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>93</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="semel">אדליה</td>
+          <td class="semel">כצמן</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>91</td>
+          <td><span class="semel">תלמיד סמל</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>שיר רעיה</td>
+          <td>לוי</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>71</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ליאן</td>
+          <td>פונטיה</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>90</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>פרג</td>
+          <td>תאיחר</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>79</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>דניאל</td>
+          <td>קזיניץ</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>89</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>עידן</td>
+          <td>קנדלקאר</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>91</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>ליה</td>
+          <td>שחר</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>89</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="semel">מיכאל</td>
+          <td class="semel">שימנסקי</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td></td>
+          <td><span class="semel">לא נבחנה / תלמיד סמל</span></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>אביב</td>
+          <td>שרעבי</td>
+          <td>ט</td>
+          <td>א</td>
+          <td>מבחן מיפוי ספטמבר</td>
+          <td>97</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="summary-line">
+      מספר תלמידים בהקבצה: <span id="studentCount">0</span>
+    </div>
+  </section>
+
+  <div class="back-area">
+    <a class="back-link" href="grade9.html">חזרה לשכבת ט</a>
+  </div>
+
+  <script>
+    (function() {
+      const tbody = document.querySelector('#studentsTable tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      let counter = 1;
+      rows.forEach((tr) => {
+        const firstCell = tr.querySelector('td');
+        if (firstCell) {
+          firstCell.textContent = counter;
+          counter++;
+        }
+      });
+      document.getElementById('studentCount').textContent = rows.length;
+    })();
+  </script>
+</body>
+</html>
