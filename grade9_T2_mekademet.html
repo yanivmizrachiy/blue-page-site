@@ -1,1 +1,39 @@
-<!doctype html><meta charset=utf-8><title>grade9_T2_mekademet.html</title><h1 dir=rtl>grade9_T2_mekademet.html</h1><p dir=rtl>קובץ מקום – נעדכן בהמשך.</p>
+<!doctype html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ט · כיתה 2 (הקבצה מקדמת)</title>
+<style>
+body{background:#001a33;color:#fff;font-family:"Noto Sans Hebrew",system-ui,sans-serif;margin:0;padding:16px 8px;line-height:1.4;text-align:center}
+h1{color:#29ffc6;font-size:1.2rem;margin:0 0 .25rem;text-shadow:0 0 12px rgba(41,255,198,.5)}
+.info{font-size:.85rem;opacity:.85;margin-bottom:12px}
+.wrap{max-width:700px;margin:0 auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px;box-shadow:0 20px 60px rgba(0,0,0,.6);backdrop-filter:blur(5px);overflow-x:auto;text-align:right;direction:rtl}
+table{border-collapse:collapse;min-width:760px;width:100%;font-size:.85rem;color:#fff}
+th{background:rgba(255,255,255,.08);color:#29ffc6;font-weight:600;border-bottom:1px solid rgba(255,255,255,.2);padding:6px;text-align:right;white-space:nowrap}
+td{border-bottom:1px solid rgba(255,255,255,.07);padding:6px;vertical-align:top}
+.low{color:#ff4d4d;font-weight:600}
+.semel{color:#ff4d4d;font-weight:600}
+.sum{font-size:.8rem;opacity:.9;margin-top:6px;text-align:left;direction:rtl}
+a.back{display:inline-block;margin-top:16px;font-size:.85rem;font-weight:600;color:#4da6ff;text-decoration:none;border:1px solid #4da6ff;border-radius:8px;padding:6px 10px;box-shadow:0 15px 30px rgba(0,0,0,.7);background:rgba(0,0,0,.2)}
+</style></head><body>
+<h1>שכבת ט · כיתה 2 (מקדמת)</h1>
+<div class="info">חוק קבוע: ט2 היא <b>הקבצה מקדמת</b>. תלמידי <b>סמל</b> יוצגו כמו כולם, באדום ובסוגריים <i>(תלמיד סמל)</i>, וציון &lt; 60 או חסר יצבע באדום.</div>
+<div class="wrap">
+<table id="t">
+<thead><tr>
+<th>#</th><th>שם פרטי</th><th>שם משפחה</th><th>כיתה</th><th>אירוע</th><th>ציון</th><th>הערות</th>
+</tr></thead>
+<tbody>
+<!-- הוסף כאן שורות תלמידים בפורמט כמו בקבצים האחרים -->
+</tbody>
+</table>
+<div class="sum">מספר תלמידים בהקבצה: <span id="cnt">0</span></div>
+</div>
+<a class="back" href="index.html">חזרה</a>
+<script>
+const rows=[...document.querySelectorAll("#t tbody tr")];
+rows.forEach((tr,i)=>{ const td=tr.querySelectorAll("td"); td[0].textContent=i+1;
+  const g=td[5]?.textContent.trim(); if(!g){td[5].innerHTML="<span class=low>חסר ציון</span>";}
+  else{const n=Number(g); if(!isNaN(n)&&n<60) td[5].innerHTML="<span class=low>"+g+"</span>";}
+});
+document.getElementById("cnt").textContent=rows.length;
+</script>
+</body></html>
