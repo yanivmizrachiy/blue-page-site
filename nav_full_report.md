@@ -1,5 +1,5 @@
 # דו״ח ניווט מלא (Auto QA)
-_זמן: 2025-11-01T23:52:50+02:00_
+_זמן: 2025-11-02T00:13:11+02:00_
 
 ✅ index.html → grade7.html
 ✅ index.html → grade8.html
